@@ -14,6 +14,22 @@
 / {
     conditional_layers { compatible = "zmk,conditional-layers"; };
 
+    macros {
+        kvm1: kvm1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp LCTRL &kp NUMBER_1>;
+            label = "KVM1";
+        };
+
+        kvm2: kvm2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp LCTRL &kp NUMBER_2>;
+            label = "KVM2";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -46,7 +62,7 @@
 
         navi {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &tog 4  &trans          &trans          &trans        &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &tog 4  &trans          &trans          &trans        &trans     &kvm1   &kvm2
 &trans  &trans  &trans  &trans  &trans  &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans          &trans        &trans     &trans  &trans
                         &trans  &trans  &trans  &trans          &trans          &trans
