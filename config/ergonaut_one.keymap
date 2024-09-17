@@ -12,23 +12,7 @@
 &mt { quick-tap-ms = <200>; };
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        tri-layer {
-            if-layers = <2 4>;
-            then-layer = <4>;
-        };
-    };
-
-    macros {
-        kvm1: kvm1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none>;
-            label = "KVM1";
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 
     keymap {
         compatible = "zmk,keymap";
